@@ -6,17 +6,31 @@ def timeframe(months):
 def netProfit(profits):
     profit = 0
     for value in profits:
-        profits += int(profits)
+        profit += value
 
     return profit
 
-def averageProfit(netProfit, months):
-    return (netProfit/months)
 
-def greatestLoss(profits):
-    return min(profits)
+def changes(netProfits):
+    lastProf = None
+    changes=[]
+    for profit in netProfits:
+        if lastProf:
+           changes.append(profit-lastProf)
 
-def greatestProfit(profits):
-    return max(profits)
+        lastProf = profit 
+    return changes
 
-    
+
+def averageProfit(changes):
+    return (sum(changes)/(len(changes)))
+
+def greatestLoss(changes,months):
+    month = months[changes.index(min(changes))]
+    print(month)
+    return [month,min(changes)]
+
+def greatestProfit(changes,months):
+    month = months[changes.index(max(changes))]
+    print(month)
+    return [month,max(changes)]

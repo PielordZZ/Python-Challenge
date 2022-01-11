@@ -6,4 +6,8 @@ def getBudgetData(path):
 
 
         data = csv.reader(file, delimiter = ',')
-    return data
+        budgetDict = {}
+
+        for item in data:
+            budgetDict[item[0]]= item[1]
+    return budgetDict
