@@ -5,7 +5,7 @@ import getBudgetData
 import calculations
 import time
 import writeAnalysis
-path = 'Resources\\budget_data.csv'
+path = 'PyBank\\Resources\\budget_data.csv'
 
 budget = getBudgetData.getBudgetData(path)
 
@@ -47,7 +47,5 @@ Greatest Decrease in Profits: {maxDecrease[0]} (${maxDecrease[1]:.2f})
 
 print(Analysis)
 dateTime=time.asctime(time.localtime())
-print(dateTime)
 fileTime =  dateTime.split()
-print(fileTime)
-writeAnalysis.writeNewFile(f'Analysis\\{fileTime[1]}{fileTime[2]}{fileTime[4]}Analysis.txt',Analysis)
+writeAnalysis.writeNewFile(f'PyBank\\Analysis\\{fileTime[1]}{fileTime[2]}{fileTime[4]}Analysis.txt',Analysis)

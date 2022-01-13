@@ -2,7 +2,7 @@ from os.path import exists
 
 def writeNewFile(filePath,filetext):
     if not exists(filePath):
-        f = open(filePath, 'x')
+        f = open(filePath, 'w')
         f.write(filetext)
         f.close()
     else:
